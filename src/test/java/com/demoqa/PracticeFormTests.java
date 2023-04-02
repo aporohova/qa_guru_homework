@@ -18,7 +18,7 @@ public class PracticeFormTests extends TestBase {
         $("[type='radio'][value='Male']").parent().click();
         $("#userNumber").setValue("9995557771");
         $("#dateOfBirthInput").sendKeys(Keys.COMMAND + "a"); //в случае Windows OS поменять на CONTROL
-        $("#dateOfBirthInput").sendKeys("12 Apr 1911");
+        $("#dateOfBirthInput").sendKeys("04.12.1911");
         $("#dateOfBirthInput").pressEnter();
         $(".subjects-auto-complete__control").click();
         $("#subjectsInput").sendKeys("C");
