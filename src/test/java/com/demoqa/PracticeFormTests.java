@@ -45,7 +45,6 @@ public class PracticeFormTests extends TestBase {
                 text("kartinki_png_13_01075134-768x967-1.png"),
                 text("Lenina street"),
                 text("Rajasthan Jaipur"));
-        sleep(20000);
 
 
 
