@@ -1,8 +1,6 @@
 package com.demoqa.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.google.common.reflect.ClassPath;
 import org.openqa.selenium.Keys;
 
 import java.io.File;
@@ -13,7 +11,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
-    // SelenideElements / locator
    SelenideElement
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
