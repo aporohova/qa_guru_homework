@@ -1,14 +1,6 @@
 package com.demoqa.tests;
 
-import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Keys;
-
-import java.io.File;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTestsWithPageObject extends TestBase {
 
@@ -40,42 +32,6 @@ public class PracticeFormTestsWithPageObject extends TestBase {
                         .checkResults("kartinki_png_13_01075134-768x967-1.png")
                         .checkResults("Lenina street")
                         .checkResults("Rajasthan Jaipur");
-
-
-
-
-
-
-        //$(".subjects-auto-complete__control").click();
-        //$("#subjectsInput").sendKeys("C");
-        //$("#react-select-2-option-2").click();
-
-
-        //$("#uploadPicture").uploadFile(new File("src/test/data/kartinki_png_13_01075134-768x967-1.png"));
-
-
-        //$("#state").click();
-        //$(".css-11unzgr").$(byText("Rajasthan")).click();
-
-        //$("#city").click();
-        //$(".css-11unzgr").$(byText("Jaipur")).click();
-        //$(".btn-primary").click();
-
-        //check the results
-       // $(".table-responsive").shouldHave(text("James Bond"),
-                //text("JLondon@gggg.com"),
-                //text("Male"),
-                //text("9995557771"),
-                //text("12 April,1911"),
-                //text("Computer science"),
-                //text("Music"),
-                //text("kartinki_png_13_01075134-768x967-1.png"),
-                //text("Lenina street"),
-                //text("Rajasthan Jaipur"));
-
-
-
-
 
     }
 }
