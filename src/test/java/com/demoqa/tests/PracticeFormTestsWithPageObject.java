@@ -21,7 +21,8 @@ public class PracticeFormTestsWithPageObject extends TestBase {
                         .setCurrentAddress("Lenina street")
                         .setState("Rajasthan")
                         .setCity("Jaipur")
-                        .selectSubmit()
+                        .selectSubmit();
+        registrationPage.checkResults("Jack London")
                         .checkResults("Jack London")
                         .checkResults("JLondon@gggg.com")
                         .checkResults("Male")
