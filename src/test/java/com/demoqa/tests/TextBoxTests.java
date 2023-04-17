@@ -1,13 +1,11 @@
 package com.demoqa.tests;
-
 import com.demoqa.pages.TextBoxPage;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxTests extends TestBase{
+    TextBoxPage textBoxPage = new TextBoxPage();
+
 
     @Test
     void successfulFillFormTest() {

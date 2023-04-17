@@ -33,19 +33,20 @@ public class RegistrationPage {
             submit=$(".btn-primary"),
 
             resultCheck=$(".table-responsive");
-            //birthdayInput=$("#dateOfBirthInput");
 
-
-
-
-    //Actions
     public RegistrationPage openPage () {
        open ("/automation-practice-form");
-       executeJavaScript("$('#fixedban').remove()");
-       executeJavaScript("$('footer').remove()");
 
        return this;
     }
+
+    public RegistrationPage removeFooter () {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+
+        return this;
+    }
+
    public RegistrationPage setFirstName (String value) {
       firstNameInput.setValue(value);
 
@@ -127,7 +128,5 @@ public RegistrationPage selectHobby () {
 
        return this;
    }
-
-
    }
 

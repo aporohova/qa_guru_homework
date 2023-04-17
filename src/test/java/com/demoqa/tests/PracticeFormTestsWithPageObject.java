@@ -1,14 +1,19 @@
 package com.demoqa.tests;
 
+import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
 public class PracticeFormTestsWithPageObject extends TestBase {
+
+    RegistrationPage registrationPage = new RegistrationPage();
+
 
     @Test
     void successfulFormTest (){
 
 
         registrationPage.openPage()
+                        .removeFooter()
                         .setFirstName("Jack")
                         .setLastName("London")
                         .setUserEmail("JLondon@gggg.com")
@@ -17,7 +22,7 @@ public class PracticeFormTestsWithPageObject extends TestBase {
                         .setBirthday("04.12.1911")
                         .setSubject("Computer science")
                         .selectHobby()
-                        .uploadUserPicture ("src/test/data/kartinki_png_13_01075134-768x967-1.png")
+                        .uploadUserPicture ("src/test/resources/kartinki_png_13_01075134-768x967-1.png")
                         .setCurrentAddress("Lenina street")
                         .setState("Rajasthan")
                         .setCity("Jaipur")
