@@ -7,10 +7,8 @@ public class PracticeFormTestsWithPageObject extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-
     @Test
     void successfulFormTest (){
-
 
         registrationPage.openPage()
                         .removeFooter()
