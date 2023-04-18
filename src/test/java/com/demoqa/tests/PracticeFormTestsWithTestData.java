@@ -3,7 +3,11 @@ package com.demoqa.tests;
 import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
 
-public class PracticeFormTestsWithPageObject extends TestBase {
+import static com.codeborne.selenide.Selenide.sleep;
+import static com.demoqa.tests.TestData.*;
+import static com.demoqa.utils.RandomUtils.genders;
+
+public class PracticeFormTestsWithTestData extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
@@ -11,15 +15,14 @@ public class PracticeFormTestsWithPageObject extends TestBase {
     @Test
     void successfulFormTest (){
 
-
         registrationPage.openPage()
                         .removeFooter()
-                        .setFirstName("Jack")
-                        .setLastName("London")
-                        .setUserEmail("JLondon@gggg.com")
-                        .setGender("Male")
-                        .setUserNumber("9995557771")
-                        .setBirthday("04.12.1911")
+                        .setFirstName(firstName)
+                        .setLastName(lastName)
+                        .setUserEmail(userEmail)
+                        .setGender(gender)
+                        .setUserNumber(userNumber)
+                        .setBirthday(userBirthDay)
                         .setSubject("Computer science")
                         .selectHobby()
                         .uploadUserPicture ("src/test/resources/kartinki_png_13_01075134-768x967-1.png")
@@ -27,17 +30,17 @@ public class PracticeFormTestsWithPageObject extends TestBase {
                         .setState("Rajasthan")
                         .setCity("Jaipur")
                         .selectSubmit();
-        registrationPage.checkResults("Jack London")
-                        .checkResults("Jack London")
-                        .checkResults("JLondon@gggg.com")
-                        .checkResults("Male")
-                        .checkResults("9995557771")
-                        .checkResults("12 April,1911")
+        registrationPage.checkResults(firstName + " " + lastName)
+                        .checkResults(userEmail)
+                        .checkResults(gender)
+                        .checkResults(userNumber)
+                        .checkResults(userBirthDay)
                         .checkResults("Computer science")
                         .checkResults("Music")
                         .checkResults("kartinki_png_13_01075134-768x967-1.png")
                         .checkResults("Lenina street")
                         .checkResults("Rajasthan Jaipur");
-
+        sleep (6000);
     }
 }
+

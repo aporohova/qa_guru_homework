@@ -63,7 +63,7 @@ public class RegistrationPage {
 
       return this;
    }
-       public RegistrationPage setGender (){
+       public RegistrationPage setGender (String value) {
            genderSelection.parent().click();
 
            return this;
