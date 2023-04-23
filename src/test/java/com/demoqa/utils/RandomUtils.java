@@ -1,8 +1,8 @@
 package com.demoqa.utils;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Random;
-
+import java.time.LocalDate;
+import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
 
@@ -20,30 +20,38 @@ public class RandomUtils {
 
     public static void main(String[] args) {
 
-        System.out.println(getRandom(genders));
+        System.out.println(getRandomItemFromArray(genders));
         System.out.println(getRandom(hobbies));
         System.out.println(getRandom(subjects));
         System.out.println(getRandom(states));
-        System.out.println(getDateRandom());
+        System.out.println(randomBirthDay());
     }
 
-
+    public static int getRandomInt(int min, int max) {
+        return ThreadLocalRandom.current().nextInt(min, max+1);
+    }
     public static String getRandom(String[] array) {
         int rnd = new Random().nextInt(array.length);
         return array[rnd];
-        //int index = getRandomInt(0, values.length -1);
-        //return values[index];
+//        int index = getRandomInt(0, values.length -1);
+//        return values[index];
+    }
+
+    public static String getRandomItemFromArray(String[] values) {
+        int index = getRandomInt(0, values.length -1);
+                return values [index];
     }
 
     public static String getRandomGender() {
-        return getRandom(genders);
+        return getRandomItemFromArray(genders);
     }
 
-    public static String getDateRandom () {
-        String s = new SimpleDateFormat("MM.dd.yyyy").format(new Date());
+    public static String randomBirthDay () {
+
+        String s = new SimpleDateFormat("dd.MM.yyyy").format(new Date());
         return s;
-
     }
+
 
     public static String getRandomHobbies() {
         return getRandom(hobbies);

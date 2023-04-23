@@ -27,17 +27,17 @@ public class PracticeFormTestsWithPageObject extends TestBase {
                         .setState("Rajasthan")
                         .setCity("Jaipur")
                         .selectSubmit();
-        registrationPage.checkResults("Jack London")
+        registrationPage.checkResults( "Jack London")
                         .checkResults("Jack London")
-                        .checkResults("JLondon@gggg.com")
+                        .checkResults( "JLondon@gggg.com")
                         .checkResults("Male")
-                        .checkResults("9995557771")
+                        .checkResults( "9995557771")
                         .checkResults("12 April,1911")
-                        .checkResults("Computer science")
+                        .checkResults( "Computer science")
                         .checkResults("Music")
                         .checkResults("kartinki_png_13_01075134-768x967-1.png")
                         .checkResults("Lenina street")
-                        .checkResults("Rajasthan Jaipur");
+                        .checkResults( "Rajasthan Jaipur");
 
     }
 }

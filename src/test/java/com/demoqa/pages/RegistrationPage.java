@@ -124,7 +124,7 @@ public RegistrationPage selectHobby (String value) {
        return this;
    }
    public RegistrationPage checkResults (String value) {
-      resultCheck.shouldHave(text(value));
+        resultCheck.shouldHave(text(value));
 
        return this;
    }

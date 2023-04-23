@@ -29,16 +29,15 @@ public class PracticeFormTestsWithTestData extends TestBase {
                         .setCity(cities)
                         .selectSubmit();
         registrationPage.checkResults(firstName + " " + lastName)
-                        .checkResults(firstName + " " + lastName)
-                        .checkResults(userEmail)
-                        .checkResults(gender)
-                        .checkResults(userNumber)
-                        .checkResults(userBirthDay)
-                        .checkResults(subjects)
-                        .checkResults(hobbies)
-                        .checkResults("kartinki_png_13_01075134-768x967-1.png")
+                        .checkResults( userEmail)
+                        .checkResults( gender)
+                        .checkResults( userNumber)
+                        .checkResults( userBirthDay)
+                        .checkResults( subjects)
+                        .checkResults( hobbies)
+                        .checkResults( "kartinki_png_13_01075134-768x967-1.png")
                         .checkResults(currentAddress)
-                        .checkResults(states + " " + cities);
+                        .checkResults( states + " " + cities);
         sleep (6000);
     }
 }

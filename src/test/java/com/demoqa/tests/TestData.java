@@ -2,6 +2,8 @@ package com.demoqa.tests;
 
 import com.github.javafaker.Faker;
 
+import java.util.Date;
+
 import static com.demoqa.utils.RandomUtils.*;
 
 public class TestData {
@@ -12,9 +14,7 @@ public class TestData {
             gender = getRandomGender(),
             userNumber = faker.phoneNumber().subscriberNumber(10),
             currentAddress = faker.address().fullAddress(),
-            userBirthDay = getDateRandom(),
-            //userBirthDay = faker.date().birthday(),
-    //"12 April,1911", //04.12.1911,
+            userBirthDay = randomBirthDay(),
             hobbies = getRandomHobbies(),
             subjects = getRandomSubject(),
             states = getRandomState(),
