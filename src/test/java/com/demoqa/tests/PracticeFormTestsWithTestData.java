@@ -5,12 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.demoqa.tests.TestData.*;
-import static com.demoqa.utils.RandomUtils.genders;
 
 public class PracticeFormTestsWithTestData extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-
 
     @Test
     void successfulFormTest (){
@@ -23,23 +21,24 @@ public class PracticeFormTestsWithTestData extends TestBase {
                         .setGender(gender)
                         .setUserNumber(userNumber)
                         .setBirthday(userBirthDay)
-                        .setSubject("Computer science")
-                        .selectHobby()
+                        .setSubject(subjects)
+                        .selectHobby(hobbies)
                         .uploadUserPicture ("src/test/resources/kartinki_png_13_01075134-768x967-1.png")
-                        .setCurrentAddress("Lenina street")
-                        .setState("Rajasthan")
-                        .setCity("Jaipur")
+                        .setCurrentAddress(currentAddress)
+                        .setState(states)
+                        .setCity(cities)
                         .selectSubmit();
         registrationPage.checkResults(firstName + " " + lastName)
+                        .checkResults(firstName + " " + lastName)
                         .checkResults(userEmail)
                         .checkResults(gender)
                         .checkResults(userNumber)
                         .checkResults(userBirthDay)
-                        .checkResults("Computer science")
-                        .checkResults("Music")
+                        .checkResults(subjects)
+                        .checkResults(hobbies)
                         .checkResults("kartinki_png_13_01075134-768x967-1.png")
-                        .checkResults("Lenina street")
-                        .checkResults("Rajasthan Jaipur");
+                        .checkResults(currentAddress)
+                        .checkResults(states + " " + cities);
         sleep (6000);
     }
 }

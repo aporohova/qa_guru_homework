@@ -21,7 +21,7 @@ public class PracticeFormTestsWithPageObject extends TestBase {
                         .setUserNumber("9995557771")
                         .setBirthday("04.12.1911")
                         .setSubject("Computer science")
-                        .selectHobby()
+                        .selectHobby("Music")
                         .uploadUserPicture ("src/test/resources/kartinki_png_13_01075134-768x967-1.png")
                         .setCurrentAddress("Lenina street")
                         .setState("Rajasthan")

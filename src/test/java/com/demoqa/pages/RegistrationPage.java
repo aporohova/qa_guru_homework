@@ -87,7 +87,7 @@ public RegistrationPage setSubject(String value) {
 
         return this;
 }
-public RegistrationPage selectHobby () {
+public RegistrationPage selectHobby (String value) {
         hobbySelection.parent().click();
 
         return this;
