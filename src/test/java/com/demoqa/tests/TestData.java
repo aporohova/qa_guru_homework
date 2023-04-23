@@ -1,13 +1,27 @@
 package com.demoqa.tests;
 
+import com.github.javafaker.Faker;
+
+import java.util.Date;
+
 import static com.demoqa.utils.RandomUtils.*;
 
 public class TestData {
-    public static String firstName = getRandomString(10),
-            lastName = getRandomString(10),
-            userEmail = getRandomEmail(),
-            gender = getRandomItemFromArray(genders),
-            //gender = "Male",
-            userNumber = (getRandomInt(111111, 999999) +""),
-            userBirthDay = "12 April,1911"; //04.12.1911
+    static Faker faker = new Faker();
+    public static String firstName = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            userEmail = faker.internet().emailAddress(),
+            gender = getRandomGender(),
+            userNumber = faker.phoneNumber().subscriberNumber(10),
+            currentAddress = faker.address().fullAddress(),
+            userBirthDay = randomBirthDay(),
+            hobbies = getRandomHobbies(),
+            subjects = getRandomSubject(),
+            states = getRandomState(),
+            cities = String.valueOf(getRandomCity(states));
+
+
+
+
+
 }

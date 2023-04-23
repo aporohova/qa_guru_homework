@@ -87,7 +87,7 @@ public RegistrationPage setSubject(String value) {
 
         return this;
 }
-public RegistrationPage selectHobby () {
+public RegistrationPage selectHobby (String value) {
         hobbySelection.parent().click();
 
         return this;
@@ -124,7 +124,7 @@ public RegistrationPage selectHobby () {
        return this;
    }
    public RegistrationPage checkResults (String value) {
-      resultCheck.shouldHave(text(value));
+        resultCheck.shouldHave(text(value));
 
        return this;
    }
