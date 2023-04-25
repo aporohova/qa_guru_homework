@@ -1,13 +1,12 @@
 package com.demoqa.utils;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
-
     static String[] genders = {"Male", "Female", "Other"};
     static String[] hobbies = {"Sports", "Reading", "Music"};
+    static String [] month = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
     static String[] subjects = {"English", "Chemistry", "Computer Science",
             "Commerce", "Economics", "Social Studies", "Maths", "Accounting",
             "Arts", "Biology", "Physics", "Civics", "Hindi", "History"};
@@ -24,17 +23,15 @@ public class RandomUtils {
         System.out.println(getRandom(hobbies));
         System.out.println(getRandom(subjects));
         System.out.println(getRandom(states));
-        System.out.println(randomBirthDay());
     }
 
     public static int getRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max+1);
     }
+
     public static String getRandom(String[] array) {
         int rnd = new Random().nextInt(array.length);
         return array[rnd];
-//        int index = getRandomInt(0, values.length -1);
-//        return values[index];
     }
 
     public static String getRandomItemFromArray(String[] values) {
@@ -45,13 +42,20 @@ public class RandomUtils {
     public static String getRandomGender() {
         return getRandomItemFromArray(genders);
     }
-
-    public static String randomBirthDay () {
-
-        String s = new SimpleDateFormat("dd.MM.yyyy").format(new Date());
-        return s;
+    public static String setRandomYear() {
+        return Integer.toString(getRandomInt(1900, 2010));
     }
-
+    public static String setRandomMonth() {
+        return getRandomItemFromArray(month);
+    }
+    public static String setRandomDay() {
+        int day = getRandomInt(1, 28);
+        if (day < 10) {
+            return "0" + day;
+        } else {
+            return Integer.toString(day);
+        }
+    }
 
     public static String getRandomHobbies() {
         return getRandom(hobbies);
