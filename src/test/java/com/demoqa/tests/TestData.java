@@ -1,8 +1,8 @@
 package com.demoqa.tests;
 
+import com.demoqa.utils.RandomUtils;
 import com.github.javafaker.Faker;
 
-import java.util.Date;
 
 import static com.demoqa.utils.RandomUtils.*;
 
@@ -13,10 +13,13 @@ public class TestData {
             userEmail = faker.internet().emailAddress(),
             gender = getRandomGender(),
             userNumber = faker.phoneNumber().subscriberNumber(10),
-            currentAddress = faker.address().fullAddress(),
-            userBirthDay = randomBirthDay(),
-            hobbies = getRandomHobbies(),
+            day = RandomUtils.setRandomDay(),
+            month = RandomUtils.setRandomMonth(),
+            year = RandomUtils.setRandomYear(),
             subjects = getRandomSubject(),
+
+            hobbies = getRandomHobbies(),
+            currentAddress = faker.address().fullAddress(),
             states = getRandomState(),
             cities = String.valueOf(getRandomCity(states));
 
