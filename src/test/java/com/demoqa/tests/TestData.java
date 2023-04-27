@@ -19,6 +19,8 @@ public class TestData {
             subjects = getRandomSubject(),
 
             hobbies = getRandomHobbies(),
+            pathValue = "src/test/resources/",
+            fileValue = "kartinki_png_13_01075134-768x967-1.png",
             currentAddress = faker.address().fullAddress(),
             states = getRandomState(),
             cities = String.valueOf(getRandomCity(states));

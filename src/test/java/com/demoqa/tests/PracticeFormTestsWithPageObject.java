@@ -25,7 +25,7 @@ public class PracticeFormTestsWithPageObject extends TestBase {
                         .setBirthDate(day, month, year)
                         .setSubject("Computer science")
                         .selectHobby("Music")
-                        .uploadUserPicture ("src/test/resources/kartinki_png_13_01075134-768x967-1.png")
+                        .uploadUserPicture ("src/test/resources/","kartinki_png_13_01075134-768x967-1.png")
                         .setCurrentAddress("Lenina street")
                         .setState("Rajasthan")
                         .setCity("Jaipur")
