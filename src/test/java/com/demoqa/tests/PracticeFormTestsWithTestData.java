@@ -22,7 +22,7 @@ public class PracticeFormTestsWithTestData extends TestBase {
                         .setBirthDate(day,month,year)
                         .setSubject(subjects)
                         .selectHobby(hobbies)
-                        .uploadUserPicture ("src/test/resources/kartinki_png_13_01075134-768x967-1.png")
+                        .uploadUserPicture (pathValue, fileValue)
                         .setCurrentAddress(currentAddress)
                         .setState(states)
                         .setCity(cities)
@@ -36,7 +36,7 @@ public class PracticeFormTestsWithTestData extends TestBase {
                         .checkResults(year)
                         .checkResults( subjects)
                         .checkResults( hobbies)
-                        .checkResults( "kartinki_png_13_01075134-768x967-1.png")
+                        .checkResults(fileValue)
                         .checkResults(currentAddress)
                         .checkResults( states + " " + cities);
     }

@@ -94,8 +94,8 @@ public RegistrationPage selectHobby (String hobby) {
         return this;
 
 }
-   public RegistrationPage uploadUserPicture (String path) {
-      pictureUpload.uploadFile(new File(path ));
+   public RegistrationPage uploadUserPicture (String path, String value) {
+      pictureUpload.uploadFile(new File(path,value ));
 
       return this;
    }
