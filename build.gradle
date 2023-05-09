@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id ("io.qameta.allure") version "2.11.2"
 }
 
 repositories {
@@ -19,6 +20,26 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+allure {
+    report {
+        version.set("2.22.0")
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.22.0")
+            }
+        }
+    }
+}
+
 test {
     useJUnitPlatform()
+}
+
+task remote_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("remote")
+    }
 }
