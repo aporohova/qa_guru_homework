@@ -5,6 +5,11 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class RemoteTestBase {
     @BeforeAll
@@ -13,6 +18,16 @@ public class RemoteTestBase {
         Configuration.browserSize = "1920x1080";
         //Configuration.browser = "chrome";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        Map<String,Object> prop = new HashMap<>();
+        prop.put("enableVNC",true);
+        prop.put("enableVideo", true);
+
+        capabilities.setCapability ("selenoid:options", prop);
+
+        Configuration.browserCapabilities = capabilities;
     }
 
     @BeforeEach

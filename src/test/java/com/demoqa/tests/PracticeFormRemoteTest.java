@@ -1,5 +1,6 @@
 package com.demoqa.tests;
 
+import com.codeborne.selenide.Configuration;
 import com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
