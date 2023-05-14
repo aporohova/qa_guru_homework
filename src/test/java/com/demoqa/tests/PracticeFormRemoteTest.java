@@ -12,7 +12,7 @@ public class PracticeFormRemoteTest extends RemoteTestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
-    @Tag("remote")
+    @Tag("remote") @Tag("blocker")
     @DisplayName("Successful registration")
     void successfulFormTest (){
 

@@ -41,10 +41,13 @@ test {
 }
 
 tasks.withType(Test) {
-    useJUnitPlatform()
     systemProperties(System.getProperties())
 }
-
+task blocker(type: Test) {
+    useJUnitPlatform{
+        includeTags("blocker")
+    }
+}
 task remote_test(type: Test) {
     useJUnitPlatform{
         includeTags("remote")
