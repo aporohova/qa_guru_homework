@@ -16,11 +16,18 @@ import java.util.Map;
 public class RemoteTestBase {
     @BeforeAll
     static void beforeAll () {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        //Configuration.browser = "chrome";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = System.getProperty("remote");
+        Configuration.baseUrl = System.getProperty("baseUrl");
+        Configuration.browserSize = System.getProperty("browserSize");
+        String[] browser = System.getProperty("browser").split(":");
+        Configuration.browser = browser[0];
+        Configuration.browserVersion = browser[1];
+
+//        Configuration.baseUrl = "https://demoqa.com";
+//        Configuration.browserSize = "1920x1080";
+//        //Configuration.browser = "chrome";
+//        Configuration.pageLoadStrategy = "eager";
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         Map<String,Object> prop = new HashMap<>();
