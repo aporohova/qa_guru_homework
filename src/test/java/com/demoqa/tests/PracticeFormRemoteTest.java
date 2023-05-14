@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.demoqa.tests.TestData.*;
 import static io.qameta.allure.Allure.step;
 
+@Tag("registration form")
 public class PracticeFormRemoteTest extends RemoteTestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 

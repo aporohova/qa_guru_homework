@@ -45,6 +45,10 @@ tasks.withType(Test) {
 }
 task blocker(type: Test) {
     useJUnitPlatform{
+        includeTags("registration form")
+
+task blocker(type: Test) {
+    useJUnitPlatform{
         includeTags("blocker")
     }
 }
@@ -56,6 +60,6 @@ task smoke(type: Test) {
 }
 task remote_test(type: Test) {
     useJUnitPlatform{
-        includeTags("remote")
+        includeTags("property")
     }
 }
