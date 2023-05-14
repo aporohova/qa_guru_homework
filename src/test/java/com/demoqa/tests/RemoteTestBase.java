@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.HashMap;
 import java.util.Map;
 
-@Tag("property")
+@Tag("remote")
 public class RemoteTestBase {
     @BeforeAll
     static void beforeAll() {
