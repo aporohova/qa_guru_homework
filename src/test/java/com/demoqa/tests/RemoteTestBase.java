@@ -14,7 +14,6 @@ import java.util.Map;
 
 @Tag("remote")
 public class RemoteTestBase {
-    //PracticeFormRemoteTest practiceFormRemoteTest = new PracticeFormRemoteTest();
     @BeforeAll
     static void beforeAll() {
         String selenoidUrl = System.getProperty("selenoid_url");
@@ -31,13 +30,6 @@ public class RemoteTestBase {
         Configuration.browserVersion = browser[1];
 
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
-
-
-//        Configuration.baseUrl = "https://demoqa.com";
-//        Configuration.browserSize = "1920x1080";
-//        //Configuration.browser = "chrome";
-//        Configuration.pageLoadStrategy = "eager";
-//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         Map<String, Object> prop = new HashMap<>();
