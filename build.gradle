@@ -58,7 +58,7 @@ task registration_form(type: Test) {
                 includeTags("smoke")
             }
         }
-        task remote_test(type: Test) {
+        task propery(type: Test) {
             useJUnitPlatform {
                 includeTags("property")
             }
