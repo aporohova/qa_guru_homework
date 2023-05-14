@@ -43,23 +43,24 @@ test {
 tasks.withType(Test) {
     systemProperties(System.getProperties())
 }
-task blocker(type: Test) {
-    useJUnitPlatform{
+task registration_form(type: Test) {
+    useJUnitPlatform {
         includeTags("registration form")
 
-task blocker(type: Test) {
-    useJUnitPlatform{
-        includeTags("blocker")
-    }
-}
+        task blocker(type: Test) {
+            useJUnitPlatform {
+                includeTags("blocker")
+            }
+        }
 
-task smoke(type: Test) {
-    useJUnitPlatform{
-        includeTags("smoke")
-    }
-}
-task remote_test(type: Test) {
-    useJUnitPlatform{
-        includeTags("property")
-    }
-}
+        task smoke(type: Test) {
+            useJUnitPlatform {
+                includeTags("smoke")
+            }
+        }
+        task remote_test(type: Test) {
+            useJUnitPlatform {
+                includeTags("property")
+            }
+        }
+    }}
