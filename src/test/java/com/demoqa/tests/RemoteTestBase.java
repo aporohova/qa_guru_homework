@@ -6,7 +6,6 @@ import com.demoqa.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -15,9 +14,9 @@ import java.util.Map;
 
 @Tag("remote")
 public class RemoteTestBase {
-    PracticeFormRemoteTest practiceFormRemoteTest = new PracticeFormRemoteTest();
+    //PracticeFormRemoteTest practiceFormRemoteTest = new PracticeFormRemoteTest();
     @BeforeAll
-    static void beforeAll () {
+    static void beforeAll() {
         String selenoidUrl = System.getProperty("selenoid_url");
         String selenoidLoginPassword = System.getProperty("selenoid_login_password"); //format is {login}:{password}
         selenoidUrl = selenoidUrl.replaceAll("https://", "");
@@ -34,8 +33,6 @@ public class RemoteTestBase {
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
 
 
-
-
 //        Configuration.baseUrl = "https://demoqa.com";
 //        Configuration.browserSize = "1920x1080";
 //        //Configuration.browser = "chrome";
@@ -43,20 +40,19 @@ public class RemoteTestBase {
 //        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        Map<String,Object> prop = new HashMap<>();
-        prop.put("enableVNC",true);
+        Map<String, Object> prop = new HashMap<>();
+        prop.put("enableVNC", true);
         prop.put("enableVideo", true);
 
-        capabilities.setCapability ("selenoid:options", prop);
+        capabilities.setCapability("selenoid:options", prop);
 
         Configuration.browserCapabilities = capabilities;
-    }
 
-    @BeforeEach
-    void setUp() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
-    }
+
+        SelenideLogger.addListener("allure",new AllureSelenide());
+}
+
 
     @AfterEach
     void addAttachments(){
