@@ -18,12 +18,23 @@ public class RemoteTestBase {
     PracticeFormRemoteTest practiceFormRemoteTest = new PracticeFormRemoteTest();
     @BeforeAll
     static void beforeAll () {
-        Configuration.remote = System.getProperty("remote");
-        Configuration.baseUrl = System.getProperty("baseUrl");
-        Configuration.browserSize = System.getProperty("browserSize");
-        String[] browser = System.getProperty("browser").split(":");
+        String selenoidUrl = System.getProperty("selenoid_url");
+        String selenoidLoginPassword = System.getProperty("selenoid_login_password"); //format is {login}:{password}
+        selenoidUrl = selenoidUrl.replaceAll("https://", "");
+        Configuration.remote = "https://" + selenoidLoginPassword + "@" + selenoidUrl;
+
+        Configuration.pageLoadStrategy = "eager";
+
+        Configuration.baseUrl = System.getProperty("base_url", "https://demoqa.com");
+
+        String[] browser = System.getProperty("browser", "chrome:100.0").split(":");
         Configuration.browser = browser[0];
         Configuration.browserVersion = browser[1];
+
+        Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
+
+
+
 
 //        Configuration.baseUrl = "https://demoqa.com";
 //        Configuration.browserSize = "1920x1080";
