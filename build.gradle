@@ -48,6 +48,12 @@ task blocker(type: Test) {
         includeTags("blocker")
     }
 }
+
+task smoke(type: Test) {
+    useJUnitPlatform{
+        includeTags("smoke")
+    }
+}
 task remote_test(type: Test) {
     useJUnitPlatform{
         includeTags("remote")
